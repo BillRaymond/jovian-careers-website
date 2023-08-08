@@ -34,4 +34,3 @@ RUN update-alternatives --set python /usr/bin/python$PYVER
 RUN git config --global user.name "Bill.Raymond" &&\
     git config --global user.email bill.raymond@cambermast.com &&\
     git config --global init.defaultBranch main
-
