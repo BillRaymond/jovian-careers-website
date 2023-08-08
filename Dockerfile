@@ -28,6 +28,7 @@ RUN python3 -m pip install --upgrade pip
 # Set Python 3.latest as the default Python interpreter
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python$PYVER 1
 RUN update-alternatives --set python /usr/bin/python$PYVER
+RUN update-alternatives --set python /usr/bin/python$PYVER
 
 # Configure git
 RUN git config --global user.name "Bill.Raymond" &&\
