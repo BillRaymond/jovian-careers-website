@@ -25,7 +25,8 @@
 				"ms-azuretools.vscode-docker",
 				"github.vscode-github-actions",
 				"ms-toolsai.jupyter",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"ms-python.python"
 			]
 		}
 	}
