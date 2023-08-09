@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
 # These settings prevent a timezone prompt when Python installs
 ENV TZ=US/Pacific \
@@ -25,12 +25,16 @@ RUN apt -y upgrade
 # Update PIP (Python's package manager)
 RUN python3 -m pip install --upgrade pip
 
-# Set Python 3.latest as the default Python interpreter
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python$PYVER 1
-RUN update-alternatives --set python /usr/bin/python$PYVER
-RUN update-alternatives --set python /usr/bin/python$PYVER
-
 # Configure git
 RUN git config --global user.name "Bill.Raymond" &&\
     git config --global user.email bill.raymond@cambermast.com &&\
     git config --global init.defaultBranch main
+
+# Set the symbolic link for Python 3
+# RUN ln -s /usr/bin/python3.11 python3
+
+# Set the specified PYVER as the default Python interpreter
+RUN update-alternatives --install /usr/bin/python3 python /usr/bin/python$PYVER 1
+RUN update-alternatives --set python /usr/bin/python$PYVER
+RUN update-alternatives --set python /usr/bin/python$PYVER
+
